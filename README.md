@@ -1,3 +1,3 @@
-## wrap-up component
+## Wrapup component
 
-Wrap up is a reactive, responsive and interactive progress / stepper component.
+Wrapup is a reactive, responsive and interactive progress / stepper component.
