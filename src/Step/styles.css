@@ -1,0 +1,29 @@
+.step {
+    cursor: pointer;
+
+    .content-wrapper {
+        min-height: 60px;
+        min-width: 60px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .progress-bar {
+        background: blue;
+        height: 10px;
+        width: 0px;
+    }
+
+    &--active {
+        .progress-bar {
+            width: 50%;
+        }
+    }
+
+    &--past {
+        .progress-bar {
+            width: 100%;
+        }
+    }
+}

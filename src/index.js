@@ -1,4 +1,6 @@
-import Stepper from './Stepper';
+import Stepper from './Stepper'
+import Step from './Step'
 
+import './index.css'
 
-export default Stepper;
+export { Step, Stepper as default }
