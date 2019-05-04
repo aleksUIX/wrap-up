@@ -19,11 +19,17 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.4.4",
-    "babel-loader": "^8.0.5"
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.5",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.6.0",
+    "prettier": "1.17.0",
+    "style-loader": "^0.23.1"
   }
 }
