@@ -28,7 +28,7 @@ class Stepper extends PureComponent {
             const { active, previous } = this.state
             const steps = stepperElement.getElementsByClassName('step')
             const activeCell = steps[active]
-            const previousCell = previous ? steps[previous] : steps[active]
+            const previousCell = previous ? steps[previous] : steps[0]
 
             previousCell.scrollIntoView({ behavior: 'auto', inline: 'center' })
             activeCell.scrollIntoView({ behavior: 'smooth', inline: 'center' })

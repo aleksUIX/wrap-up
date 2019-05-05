@@ -7,11 +7,13 @@
     padding: 3px 10px;
     margin: 10;
     overflow: hidden;
-    height: 58px;
+    height: 56px;
+    outline: 0;
 
     &-scrollable {
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
+        outline: 0;
     }
 }
