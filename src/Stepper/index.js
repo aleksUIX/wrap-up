@@ -15,17 +15,16 @@ const styles = {
 }
 
 const Stepper = ({ children, activeStep }) => {
-    const [active, setActive] = useState(0)
-
+    const [active, setActive] = useState(null)
+    const currentStep = active !== null ? active : activeStep
     return (
         <div style={styles} type="button">
             {children.map((step, i) => {
                 return (
                     <Step
-                        isActive={active ? active === i : activeStep === i}
-                        isPast={i < activeStep}
+                        isActive={currentStep === i}
+                        isPast={i < currentStep}
                         onClick={() => {
-                            console.log(i)
                             setActive(i)
                         }}
                         {...step.props}
