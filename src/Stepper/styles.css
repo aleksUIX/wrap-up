@@ -1,10 +1,8 @@
 .stepper {
-    border-radius: 3;
     background-color: #ffffff;
     cursor: pointer;
     font-size: 14px;
-    padding: 3px 10px;
-    margin: 10;
+    padding: 4px 10px;
     overflow: hidden;
     height: 58px;
     outline: 0;
