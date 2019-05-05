@@ -1,6 +1,6 @@
 import Stepper from './Stepper'
 import Step from './Step'
 
-import './index.css'
+import './global/index.css'
 
 export { Step, Stepper as default }

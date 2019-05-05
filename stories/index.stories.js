@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 
 import Stepper from '../src'
 
-storiesOf('Wrapup', module).add('with steps', () => (
+storiesOf('Wrapup', module).add('with scroll', () => (
     <Stepper activeStep={1}>
         <>Step 1</>
         <>Step 2</>

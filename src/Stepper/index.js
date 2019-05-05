@@ -1,40 +1,66 @@
-import React, { useState } from 'react'
+/* global document */
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Step from '../Step'
 
-const styles = {
-    border: '1px solid #eee',
-    borderRadius: 3,
-    backgroundColor: '#FFFFFF',
-    cursor: 'pointer',
-    fontSize: 15,
-    padding: '3px 10px',
-    margin: 10,
-    display: 'flex',
-}
+import './styles.css'
 
-const Stepper = ({ children, activeStep }) => {
-    const [active, setActive] = useState(null)
-    const currentStep = active !== null ? active : activeStep
-    return (
-        <div style={styles} type="button">
-            {children.map((step, i) => {
-                return (
-                    <Step
-                        isActive={currentStep === i}
-                        isPast={i < currentStep}
-                        onClick={() => {
-                            setActive(i)
-                        }}
-                        {...step.props}
-                    >
-                        {step.props.children}
-                    </Step>
-                )
-            })}
-        </div>
-    )
+class Stepper extends PureComponent {
+    state = {
+        active: null,
+    }
+
+    setActive(index) {
+        this.setState({
+            previous: this.state.active,
+            active: index,
+        })
+    }
+
+    componentWillUpdate() {
+        this.centerPosition()
+    }
+
+    centerPosition() {
+        setTimeout(() => {
+            const stepperElement = this.refs.stepper
+            const { active, previous } = this.state
+            const steps = stepperElement.getElementsByClassName('step')
+            const activeCell = steps[active]
+            const previousCell = previous ? steps[previous] : steps[active]
+
+            previousCell.scrollIntoView({ behavior: 'auto', inline: 'center' })
+            activeCell.scrollIntoView({ behavior: 'smooth', inline: 'center' })
+        }, 5)
+    }
+
+    render() {
+        const { active } = this.state
+        const { activeStep, children } = this.props
+        const currentStep = active !== null ? active : activeStep
+
+        return (
+            <div className="stepper" ref="stepper">
+                <div className="stepper-scrollable">
+                    {children.map((step, i) => {
+                        return (
+                            <Step
+                                isActive={currentStep === i}
+                                isPast={i < currentStep}
+                                onClick={() => {
+                                    this.setActive(i)
+                                }}
+                                {...step.props}
+                            >
+                                {step.props.children}
+                            </Step>
+                        )
+                    })}
+                </div>
+            </div>
+        )
+    }
 }
 
 Stepper.displayName = 'Stepper'
