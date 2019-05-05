@@ -1,13 +1,12 @@
 .stepper {
-    border: 1px solid #eee;
     border-radius: 3;
     background-color: #ffffff;
     cursor: pointer;
-    font-size: 15;
+    font-size: 14px;
     padding: 3px 10px;
     margin: 10;
     overflow: hidden;
-    height: 56px;
+    height: 58px;
     outline: 0;
 
     &-scrollable {

@@ -13,7 +13,9 @@ const Step = ({ children, isPast, isActive, onClick }) => (
         onClick={onClick}
     >
         <div className="content-wrapper">{children}</div>
-        <div className="progress-bar" />
+        <div className="progress-bar">
+            <div className="progress-bar-fill" />
+        </div>
     </div>
 )
 
