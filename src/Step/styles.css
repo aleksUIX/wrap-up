@@ -3,7 +3,7 @@
 .step {
     cursor: pointer;
     min-height: 60px;
-    color: $color-disabled;
+    color: $color-text;
 
     .content-wrapper {
         min-height: 60px;
@@ -46,6 +46,10 @@
                 width: 100%;
             }
         }
+    }
+
+    &--disabled {
+        color: $color-disabled;
     }
 
     &::after {

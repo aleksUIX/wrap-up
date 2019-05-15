@@ -4,13 +4,14 @@ import classnames from 'classnames'
 
 import './styles.css'
 
-const Step = ({ children, isPast, isActive, onClick }) => (
+const Step = ({ children, isPast, isActive, onClick, disabled }) => (
     <div
         className={classnames('step', {
             'step--active': isActive,
             'step--past': isPast,
+            'step--disabled': disabled,
         })}
-        onClick={onClick}
+        onClick={disabled ? () => {} : onClick}
     >
         <div className="content-wrapper">{children}</div>
         <div className="progress-bar">
@@ -25,6 +26,7 @@ Step.propTypes = {
     isActive: PropTypes.bool,
     isPast: PropTypes.bool,
     onClick: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
 }
 
 export default Step
